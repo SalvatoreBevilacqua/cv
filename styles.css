@@ -33,38 +33,6 @@ header {
     z-index: 1000;
 }
 
-/* nav ul {
-    list-style: none;
-    padding: 1em;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    align-items: center;
-    max-width: 700px;
-    margin: auto;
-}
-
-nav ul li:not(:last-child) {
-    margin: 0 15px;
-}
-
-nav ul li:not(:last-child) {
-    margin-right: 0.5em;
-} 
-
-nav a {
-    text-decoration: none;
-    color: var(--color-primary);
-    font-size: 1.2rem;
-    transition: color 0.3s ease;
-}
-
-nav a:hover, nav a:focus {
-    color: var(--color-accent);
-    text-decoration: none;
-}
-*/
-
 .top-nav {
     display: flex;
     flex-direction: row-reverse;
@@ -289,7 +257,6 @@ footer {
     display: none; /* Hidden by default */
     cursor: pointer;
     font-size: 30px;
-    /* Additional styles for positioning and appearance */
 }
 
 /* Menu styles */
@@ -301,7 +268,6 @@ footer {
 
 #menu li a {
     text-decoration: none;
-    /* Additional styles for links */
 }
 
 /* Hidden class for toggling display */
@@ -317,7 +283,6 @@ footer {
 
     #menu {
         display: none; /* Hide menu initially */
-        /* Additional styles for the responsive menu */
     }
 }
 
@@ -350,8 +315,6 @@ footer {
     .project-container {
         grid-template-columns: 1fr; /* Stack projects on small screens */
     }
-
-    /* Other responsive styles as needed */
 }
 
 @media only screen and (max-width: 480px) {
@@ -361,8 +324,6 @@ footer {
     }
 
     nav ul li {
-        padding: 0.5em 0; /* Increase tap area */
+        padding: 0.5em 0;
     }
-
-    /* Other responsive styles as needed */
 }
