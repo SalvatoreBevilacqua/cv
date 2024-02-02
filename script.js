@@ -39,3 +39,12 @@ function easeInOutQuad(t, b, c, d) {
 
 // Get the height of the header
 const headerHeight = document.querySelector('header').offsetHeight;
+
+var menuToggle = document.getElementById('menu-toggle');
+        var menuItems = document.querySelectorAll('.menu li a');
+
+        menuItems.forEach(function (menuItem) {
+            menuItem.addEventListener('click', function () {
+                menuToggle.checked = false;
+            });
+        });
