@@ -225,11 +225,45 @@ html {
         transform: translateY(-5px);
     }
 
-/* Contact Section */
+/* Contact */
 #contact {
-    background: var(--color-white);
-    padding: 2em 1em;
+    background: var(-color-white);
+    padding: 3em 1em;
+    text-align: center;
+    padding-bottom: 10px;
 }
+
+    /* Email */
+    .contact-email {
+        font-size: 1.2rem;
+        color: var(--color-primary);
+        margin: 1em 0;
+    }
+
+    .my-email {
+        color: var(--color-primary)
+    }
+
+    .my-email:hover {
+        color: var(--color-accent);
+    }
+
+    /* Social Icons */
+    .social-icons {
+        font-size: 2rem; /* Adjust as needed */
+        color: var(--color-primary);
+        margin: 1em 0;
+    }
+
+    .social-icons a {
+        margin: 0 15px;
+        color: inherit; /* Inherits the color from .social-icons */
+        transition: color 0.3s;
+    }
+
+    .social-icons a:hover {
+        color: var(--color-accent);
+    }
 
 /* footer */
 footer {
