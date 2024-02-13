@@ -17,7 +17,7 @@
 
 /* Set base styles */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Arial';
     line-height: 1.6;
     color: var(--color-primary);
     background-color: var(--color-white);
@@ -34,6 +34,7 @@ header {
 }
 
 .top-nav {
+    position: relative;
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
@@ -49,10 +50,13 @@ header {
     list-style-type: none;
     margin: auto;
     padding: 0;
+    font-size: 1.2rem;
+    text-decoration: none;
 }
 
 .menu>li {
-    margin: 0 1rem;
+    font-weight: bold;
+    margin: 0px 2rem;
     overflow: hidden;
 }
 
@@ -63,9 +67,25 @@ li a {
     transition: color 0.3s ease;
 }
 
-li a:hover, li a:focus {
-    color: var(--color-accent);
+.menu a {
+    position: relative;
     text-decoration: none;
+}
+
+.menu a::before {
+    background: var(--color-accent);
+    content: "";
+    inset: 0;
+    position: absolute;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s ease-in-out;
+    z-index: -1;
+}
+
+.menu a:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
 }
 
 .menu-button-container {
@@ -127,7 +147,7 @@ li a:hover, li a:focus {
     .menu {
         position: absolute;
         top: 0;
-        margin-top: 83px;
+        margin-top: 67px;
         left: 0;
         flex-direction: column;
         width: 100%;
@@ -175,7 +195,7 @@ li a:hover, li a:focus {
 section {
     margin: auto;
     max-width: 800px;
-    padding: 4em 1em;
+    padding: 3em 1em;
     text-align: center;
 }
 
