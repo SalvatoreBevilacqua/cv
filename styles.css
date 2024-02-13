@@ -234,6 +234,28 @@ html {
 }
 
     /* Email */
+    .contact-email a {
+        color: #000;
+        position: relative;
+        text-decoration: none;
+    }
+
+    .contact-email a::before {
+        background: var(--color-accent);
+        content: "";
+        inset: 0;
+        position: absolute;
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 0.5s ease-in-out;
+        z-index: -1;
+    }
+
+    .contact-email a:hover::before {
+        transform: scaleX(1);
+        transform-origin: left;
+    }
+
     .contact-email {
         font-size: 1.2rem;
         color: var(--color-primary);
@@ -241,11 +263,8 @@ html {
     }
 
     .my-email {
-        color: var(--color-primary)
-    }
-
-    .my-email:hover {
-        color: var(--color-accent);
+        color: var(--color-primary);
+        text-decoration: none;
     }
 
     /* Social Icons */
