@@ -2,7 +2,7 @@
 
 /* Define color scheme */
 :root {
-    --color-primary: #555; /* Dark gray for text */
+    --color-primary: #232323; /* Dark gray for text */
     --color-secondary: #ddd; /* Light gray for backgrounds */
     --color-accent: #f4a261; /* Warm accent color */
     --color-white: #fff;
@@ -255,7 +255,7 @@ html {
 
     /* Email */
     .contact-email a {
-        color: #000;
+        color: #1c1c1c;
         position: relative;
         text-decoration: none;
     }
