@@ -1,66 +1,57 @@
-// Easing function for a more 'elegant' scroll effect
-// Using an ease-in-out quad function
-function easeInOutQuad(t, b, c, d) {
-    t /= d/2;
-    if (t < 1) return c/2*t*t + b;
-    t--;
-    return -c/2 * (t*(t-2) - 1) + b;
-  }
-  
-  // Animated scroll to function
-  function animatedScrollTo(element, to, duration) {
-    var start = element.scrollTop,
-        change = to - start,
-        currentTime = 0,
-        increment = 20;
-        
-    var animateScroll = function() {
-      currentTime += increment;
-      var val = easeInOutQuad(currentTime, start, change, duration);
-      element.scrollTop = val;
-      if(currentTime < duration) {
-        setTimeout(animateScroll, increment);
-      }
-    };
-    animateScroll();
-  }
-  
-  // Apply the animated scroll to anchor clicks
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-          e.preventDefault();
-          const targetId = this.getAttribute('href');
-          const targetElement = document.querySelector(targetId);
-          if (targetElement) {
-              animatedScrollTo(document.documentElement, targetElement.offsetTop, 1200); // Duration of 1200ms
-          }
-      });
-  });
+// Smooth scrolling using scrollIntoView (native behavior) with offset for mobile
+// Smooth scrolling to the top of the section without centering it
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+            const header = document.querySelector('.navbar');
+            const offset = header ? header.offsetHeight : 0; // Calcola l'altezza della navbar
+            const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - offset;
 
-// Get the height of the header
-const headerHeight = document.querySelector('header').offsetHeight;
-
-var menuToggle = document.getElementById('menu-toggle');
-        var menuItems = document.querySelectorAll('.menu li a');
-
-        menuItems.forEach(function (menuItem) {
-            menuItem.addEventListener('click', function () {
-                menuToggle.checked = false;
+            // Scroll to the top of the section (no centering)
+            window.scrollTo({
+                top: elementPosition,
+                behavior: 'smooth'
             });
-        });
-
-// ===== Scroll to Top ==== 
-$(document).ready(function() {
-  $(window).scroll(function() {
-      if ($(this).scrollTop() >= 50) {
-          $('#return-to-top').fadeIn(200);
-      } else {
-          $('#return-to-top').fadeOut(200);
-      }
-  });
-  $('#return-to-top').click(function() {
-      $('body,html').animate({
-          scrollTop : 0
-      }, 500);
-  });
+        }
+    });
 });
+
+// Get the height of the navbar safely
+const header = document.querySelector('.navbar');
+if (header) {
+    const headerHeight = header.offsetHeight;
+    // Now you can use headerHeight wherever necessary
+} else {
+    console.warn("L'elemento navbar non è stato trovato.");
+}
+
+// Close burger menu after clicking on a link
+document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
+    link.addEventListener('click', function() {
+        const navbarCollapse = document.querySelector('.navbar-collapse');
+        if (navbarCollapse.classList.contains('show')) {
+            new bootstrap.Collapse(navbarCollapse).toggle(); // Close the burger menu
+        }
+    });
+});
+
+// ===== Scroll to Top with immediate scroll ==== 
+$(document).ready(function() {
+    $(window).scroll(function() {
+        // Mostra il pulsante solo quando l'utente ha scrollato oltre l'altezza della navbar
+        if ($(this).scrollTop() > $('.navbar').outerHeight()) {
+            $('#return-to-top').addClass('show'); // Aggiunge la classe 'show' per attivare l'animazione
+        } else {
+            $('#return-to-top').removeClass('show');
+        }
+    });
+    
+    // Scroll immediato al top
+    $('#return-to-top').click(function() {
+        window.scrollTo(0, 0);  // Torna immediatamente in cima
+    });
+  });
+  
