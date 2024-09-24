@@ -109,30 +109,46 @@ section {
 
 /* Contatti */
 #contact {
-    background-color: var(--color-white);
+    background: var(-color-white);
+    padding: 3em 1em;
+    text-align: center;
+    padding-bottom: 10px;
 }
 
-.contact-email a {
-    color: var(--color-primary);
-    text-decoration: none;
-    position: relative;
-}
+    /* Email */
+    .contact-email a {
+        color: #1c1c1c;
+        position: relative;
+        text-decoration: none;
+    }
 
-.contact-email a::before {
-    content: "";
-    background: var(--color-accent);
-    position: absolute;
-    inset: 0;
-    transform: scaleX(0);
-    transform-origin: right;
-    transition: transform 0.5s ease-in-out;
-    z-index: -1;
-}
+    .contact-email a::before {
+        background: var(--color-accent);
+        content: "";
+        inset: 0;
+        position: absolute;
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 0.5s ease-in-out;
+        z-index: -1;
+    }
 
-.contact-email a:hover::before {
-    transform: scaleX(1);
-    transform-origin: left;
-}
+    .contact-email a:hover::before {
+        transform: scaleX(1);
+        transform-origin: left;
+    }
+
+    .contact-email {
+        font-size: 1.2rem;
+        color: var(--color-primary);
+        margin: 1em 0;
+    }
+
+    .my-email {
+        color: var(--color-primary);
+        text-decoration: none;
+    }
+    
 
 /* Icone Social */
 .social-icons a {
