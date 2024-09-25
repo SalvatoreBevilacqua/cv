@@ -64,6 +64,76 @@ section {
     background-color: var(--color-secondary);
 }
 
+.navbar-toggler {
+    border: none; /* Rimuove qualsiasi bordo visibile */
+    box-shadow: none; /* Elimina eventuali ombre */
+    outline: none; /* Assicurati che non ci sia outline */
+}
+
+.navbar-toggler:focus {
+    outline: none; /* Rimuove il bordo predefinito del focus */
+    box-shadow: none; /* Rimuove l'ombra del focus */
+}
+
+/* Icon 2 Animation */
+.animated-icon2 {
+    width: 30px;
+    height: 20px;
+    position: relative;
+    margin: 0px;
+    transform: rotate(0deg);
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+.animated-icon2 span {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    border-radius: 9px;
+    background: var(--color-primary); /* Grigio scuro per le linee del menu */
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: 0.25s ease-in-out;
+}
+
+.animated-icon2 span:nth-child(1) {
+    top: 0px;
+}
+
+.animated-icon2 span:nth-child(2),
+.animated-icon2 span:nth-child(3) {
+    top: 10px;
+}
+
+.animated-icon2 span:nth-child(4) {
+    top: 20px;
+}
+
+.animated-icon2.open span:nth-child(1) {
+    top: 11px;
+    width: 0%;
+    left: 50%;
+}
+
+.animated-icon2.open span:nth-child(2) {
+    transform: rotate(45deg);
+    background: var(--color-accent); /* Arancione caldo per l'icona aperta */
+}
+
+.animated-icon2.open span:nth-child(3) {
+    transform: rotate(-45deg);
+    background: var(--color-accent); /* Arancione caldo per l'icona aperta */
+}
+
+.animated-icon2.open span:nth-child(4) {
+    top: 11px;
+    width: 0%;
+    left: 50%;
+}
+
 /* Stili per i progetti del Portfolio */
 .project-container {
     display: grid;

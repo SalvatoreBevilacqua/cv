@@ -54,4 +54,8 @@ $(document).ready(function() {
         window.scrollTo(0, 0);  // Torna immediatamente in cima
     });
   });
-  
+
+// Animazione del burger menu (Seconda animazione)
+document.querySelector('.second-button').addEventListener('click', function () {
+    document.querySelector('.animated-icon2').classList.toggle('open');
+});
