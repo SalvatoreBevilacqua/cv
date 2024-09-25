@@ -41,13 +41,34 @@ section {
     color: var(--color-primary);
 }
 
+/* Effetto hover animato per la navbar */
 .navbar-nav .nav-link {
     color: var(--color-primary);
-    transition: color 0.3s;
+    font-size: 1.1rem;
+    font-weight: 600;
+    position: relative;
+    transition: color 0.3s ease;
+    z-index: 1;
+}
+
+.navbar-nav .nav-link::before {
+    background: var(--color-accent);
+    content: "";
+    inset: 0;
+    position: absolute;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s ease-in-out;
+    z-index: -1;
+}
+
+.navbar-nav .nav-link:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
 }
 
 .navbar-nav .nav-link:hover {
-    color: var(--color-accent);
+    color: var(--color-primary);
 }
 
 /* Stili per le sezioni */
