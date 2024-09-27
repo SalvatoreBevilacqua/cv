@@ -271,9 +271,13 @@ section {
     transition: color 0.3s ease;
 }
 
-.social-icons a:hover {
+/* Ingrandimento icone social all'hover con specificità maggiore */
+.social-icons a i:hover {
     color: var(--color-accent);
+    transform: scale(1.2); /* Le icone crescono leggermente */
+    transition: transform 0.3s ease, color 0.3s ease; /* Transizione fluida */
 }
+
 
 /* Bottone "Scroll to Top" */
 #return-to-top {
