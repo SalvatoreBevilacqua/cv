@@ -246,11 +246,11 @@ section {
 .carousel-control-next-icon:hover {
     background-color: var(--color-accent) !important; /* Cambia il background a primary */
     color: var(--color-primary) !important; /* Colore freccia primary su hover */
-    transform: translateX(-5px); /* Spostamento leggero verso sinistra per la freccia di sinistra */
+    transform: translateX(-10px); /* Spostamento leggero verso sinistra per la freccia di sinistra */
 }
 
 .carousel-control-next-icon:hover {
-    transform: translateX(5px); /* Spostamento leggero verso destra per la freccia di destra */
+    transform: translateX(10px) !important; /* Spostamento leggero verso destra per la freccia di destra */
 }
 
 @media (max-width: 768px) {
