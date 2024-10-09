@@ -423,8 +423,3 @@ body.dark-mode {
     transform: translateX(-10px); /* Leggero spostamento per la freccia sinistra */
     color: var(--color-primary); /* Colore freccia in hover */
 }
-
-.dark-mode .footer {
-    background-color: #444; /* Footer leggermente più chiaro */
-    color: #fff; /* Testo bianco */
-}
