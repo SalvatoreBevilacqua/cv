@@ -24,7 +24,7 @@
 
     <body>
         <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-lg shadow-sm">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#home">Salvatore Bevilacqua</a>
                 <button class="navbar-toggler second-button" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -37,12 +37,15 @@
                         <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
                         <li class="nav-item"><a class="nav-link" href="#contact">Contacts</a></li>
                     </ul>
+                    <button id="dark-mode-toggle" class="btn btn-custom">
+                        <i id="dark-mode-icon" class="fas fa-sun"></i>
+                    </button>                    
                 </div>
             </div>
         </nav>
 
         <!-- Home Section -->
-        <section id="home" class="text-center py-5 bg-secondary text-light">
+        <section id="home" class="text-center py-5">
             <div class="container">
                 <h1>Welcome</h1>
                 <p class="mt-4">
@@ -54,8 +57,8 @@
         </section>
 
         <!-- About Section -->
-        <section id="about" class="py-5">
-            <div class="container text-center">
+        <section id="about" class="py-5 about">
+            <div class="container">
                 <h2>About</h2>
                 <p class="mt-4">
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
@@ -66,7 +69,7 @@
         </section>
 
         <!-- Portfolio Section -->
-        <section id="portfolio" class="py-5 bg-light">
+        <section id="portfolio" class="py-5">
             <div class="container">
                 <h2 class="text-center">Portfolio</h2>
                 <div id="portfolioCarousel" class="carousel slide" data-bs-ride="carousel">

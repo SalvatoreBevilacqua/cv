@@ -59,3 +59,20 @@ $(document).ready(function() {
 document.querySelector('.second-button').addEventListener('click', function () {
     document.querySelector('.animated-icon2').classList.toggle('open');
 });
+
+// Dark Mode Toggle
+const darkModeToggle = document.getElementById("dark-mode-toggle");
+const darkModeIcon = document.getElementById("dark-mode-icon");
+
+darkModeToggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+
+    // Cambia icona
+    if (document.body.classList.contains("dark-mode")) {
+        darkModeIcon.classList.remove("fa-sun");
+        darkModeIcon.classList.add("fa-moon");
+    } else {
+        darkModeIcon.classList.remove("fa-moon");
+        darkModeIcon.classList.add("fa-sun");
+    }
+});
