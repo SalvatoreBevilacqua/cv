@@ -1,21 +1,21 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway');
 
-/* Variabili di colore */
+/* Color Variables */
 :root {
-    --color-primary: #232323; /* Testo grigio scuro */
-    --color-secondary: #ddd; /* Sfondo grigio chiaro */
-    --color-accent: #f4a261; /* Colore accento caldo */
-    --color-white: #fff; /* Bianco */
+    --color-primary: #232323; /* Dark grey text */
+    --color-secondary: #ddd; /* Light grey background */
+    --color-accent: #f4a261; /* Warm accent color */
+    --color-white: #fff; /* White */
 }
 
-/* Reset di default */
+/* Reset default styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Stili base */
+/* Basic styles */
 body {
     font-family: 'Raleway', sans-serif;
     line-height: 1.6;
@@ -23,13 +23,13 @@ body {
     background-color: var(--color-white);
 }
 
-/* Sezioni generiche */
+/* Generic section styles */
 section {
     padding: 60px 0;
     text-align: center;
 }
 
-/* Stili personalizzati per la navbar */
+/* Custom styles for the navbar */
 .navbar {
     background-color: var(--color-white);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -41,53 +41,53 @@ section {
     color: var(--color-primary);
 }
 
-/* Effetto hover "brackets" per la navbar */
+/* "Brackets" hover effect for navbar links */
 .navbar-nav .nav-link {
     position: relative;
     display: inline-block;
     margin: 0 7px;
     outline: none;
-    color: var(--color-primary); /* Colore nero */
+    color: var(--color-primary);
     text-decoration: none;
     text-transform: uppercase;
     letter-spacing: 1px;
     font-weight: 600;
     font-size: 1rem;
-    transition: color 0.3s ease; /* Animazione fluida sul colore */
+    transition: color 0.3s ease; /* Smooth transition on text color */
 }
 
 .navbar-nav .nav-link::before,
 .navbar-nav .nav-link::after {
     display: inline-block;
     opacity: 0;
-    transition: transform 0.3s, opacity 0.2s;
+    transition: transform 0.3s, opacity 0.2s; /* Transition for bracket appearance */
     color: var(--color-accent);
 }
 
 .navbar-nav .nav-link::before {
     content: '[';
     margin-right: 10px;
-    transform: translateX(20px); /* Brackets iniziano spostati a destra */
+    transform: translateX(20px); /* Brackets initially offset to the right */
 }
 
 .navbar-nav .nav-link::after {
     content: ']';
     margin-left: 10px;
-    transform: translateX(-20px); /* Brackets iniziano spostati a sinistra */
+    transform: translateX(-20px); /* Brackets initially offset to the left */
 }
 
 .navbar-nav .nav-link:hover::before,
 .navbar-nav .nav-link:hover::after {
     opacity: 1;
-    transform: translateX(0); /* I brackets si muovono verso il testo */
+    transform: translateX(0); /* Brackets move towards the text */
 }
 
 .navbar-nav .nav-link:hover {
-    color: var(--color-primary); /* Mantieni il testo nero su hover */
+    color: var(--color-primary);
 }
 
 
-/* Stili per le sezioni */
+/* Section-specific styles */
 #home {
     background-color: var(--color-secondary);
     border-bottom: 5px solid var(--color-accent);
@@ -101,18 +101,19 @@ section {
     background-color: var(--color-secondary);
 }
 
-    /** Hamburger Menu **/
+    /* Hamburger Menu styling */
     .navbar-toggler {
-        border: none; /* Rimuove qualsiasi bordo visibile */
-        box-shadow: none; /* Elimina eventuali ombre */
-        outline: none; /* Assicurati che non ci sia outline */
+        border: none; /* Removes any visible border */
+        box-shadow: none; /* Removes any shadow */
+        outline: none; /* No outline for focus */
     }
 
     .navbar-toggler:focus {
-        outline: none; /* Rimuove il bordo predefinito del focus */
-        box-shadow: none; /* Rimuove l'ombra del focus */
+        outline: none; /* Removes default focus border */
+        box-shadow: none; /* Removes focus shadow */
     }
 
+    /* Animated icon for the hamburger menu */
     .animated-icon2 {
         width: 30px;
         height: 20px;
@@ -129,13 +130,14 @@ section {
         height: 3px;
         width: 100%;
         border-radius: 9px;
-        background: var(--color-primary); /* Grigio scuro per le linee del menu */
+        background: var(--color-primary);
         opacity: 1;
         left: 0;
         transform: rotate(0deg);
         transition: 0.25s ease-in-out;
     }
 
+    /* Positioning lines for hamburger icon */
     .animated-icon2 span:nth-child(1) {
         top: 0px;
     }
@@ -157,45 +159,46 @@ section {
 
     .animated-icon2.open span:nth-child(2) {
         transform: rotate(45deg);
-        background: var(--color-accent); /* Arancione caldo per l'icona aperta */
+        background: var(--color-accent);
     }
 
     .animated-icon2.open span:nth-child(3) {
         transform: rotate(-45deg);
-        background: var(--color-accent); /* Arancione caldo per l'icona aperta */
+        background: var(--color-accent);
     }
 
     .animated-icon2.open span:nth-child(4) {
         top: 11px;
         width: 0%;
         left: 50%;
-    }
+}
 
 /* Custom styles for the portfolio carousel */
 .carousel-img {
     position: relative;
     overflow: hidden;
     transition: transform 0.3s ease;
-    border-radius: 15px;
+    border-radius: 15px; /* Rounded corners for carousel images */
 }
 
 .carousel-img img {
     width: 100%;
     height: auto;
-    transition: transform 0.3s ease, opacity 0.3s ease;
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth transition for zoom and opacity */
 }
 
 .carousel-img:hover img {
-    transform: scale(1.1); /* Leggero zoom sull'immagine quando ci si passa sopra */
+    transform: scale(1.1); /* Slight zoom effect on hover */
 }
 
+/* Overlay styles for carousel */
 .carousel-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Sfondo semi-trasparente */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
     opacity: 0;
     transition: opacity 0.3s ease;
     display: flex;
@@ -205,24 +208,24 @@ section {
 }
 
 .carousel-img:hover .carousel-overlay {
-    opacity: 1; /* Appare al passaggio del mouse */
+    opacity: 1; /* Overlay appears on hover */
 }
 
 .carousel-text {
-    color: var(--color-primary); /* Colore primario per il testo */
-    background-color: var(--color-secondary); /* Sfondo secondario per il testo */
+    color: var(--color-primary);
+    background-color: var(--color-secondary);
     padding: 20px;
-    border-radius: 5px;
+    border-radius: 5px; /* Rounded corners */
 }
 
 .carousel-text h5, .carousel-text p {
     margin: 0;
-    color: var(--color-primary); /* Assicuriamoci che il testo sia leggibile */
+    color: var(--color-primary);
     margin-bottom: 10px;
 }
 
 .carousel-text a {
-    background-color: var(--color-accent); /* Bottone con colore accento */
+    background-color: var(--color-accent);
     color: var(--color-primary);
     padding: 10px 20px;
     border-radius: 5px;
@@ -230,56 +233,55 @@ section {
     margin-top: 10px;
 }
 
-/* Stile base delle frecce */
+/* Arrow button styling */
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-    background-color: var(--color-secondary) !important; /* Background color secondary */
-    border-radius: 50%; /* Arrotondamento */
+    background-color: var(--color-secondary) !important;
+    border-radius: 50%;
     padding: 15px;
-    color: var(--color-white) !important; /* Colore freccia */
-    border: 1px solid var(--color-primary) !important; /* Bordo color primary */
-    transition: all 0.3s ease; /* Transizione per lo spostamento e il cambiamento di colore */
+    color: var(--color-white) !important; /* White color for arrows */
+    border: 1px solid var(--color-primary) !important; /* Primary color border */
+    transition: all 0.3s ease;
 }
 
-/* Effetto hover sulle frecce */
+/* Hover effect for carousel arrows */
 .carousel-control-prev-icon:hover,
 .carousel-control-next-icon:hover {
-    background-color: var(--color-accent) !important; /* Cambia il background a primary */
-    color: var(--color-primary) !important; /* Colore freccia primary su hover */
-    transform: translateX(-10px); /* Spostamento leggero verso sinistra per la freccia di sinistra */
+    background-color: var(--color-accent) !important; /* Change background on hover */
+    color: var(--color-primary) !important; /* Primary color arrow on hover */
+    transform: translateX(-10px); /* Slide effect for left arrow */
 }
 
 .carousel-control-next-icon:hover {
-    transform: translateX(10px) !important; /* Spostamento leggero verso destra per la freccia di destra */
+    transform: translateX(10px) !important; /* Slide effect for right arrow */
 }
 
+/* Responsive design for smaller devices */
 @media (max-width: 768px) {
     .carousel-img {
         height: auto;
     }
 
     .carousel-overlay {
-        background-color: rgba(0, 0, 0, 0.7); /* Sfondo più scuro per i dispositivi mobili */
+        background-color: rgba(0, 0, 0, 0.7); /* Darker overlay for mobile */
     }
 }
 
-/* Stile di base del pulsante */
+/* Custom button styles */
 .btn-custom {
-    background-color: var(--color-secondary); /* Colore grigio */
-    border-color: var(--color-primary); /* Colore nero */
-    color: var(--color-primary); /* Colore nero */
+    background-color: var(--color-secondary);
+    border-color: var(--color-primary);
+    color: var(--color-primary);
     transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
-/* Effetto hover per il pulsante */
 .btn-custom:hover {
-    background-color: var(--color-accent); /* Colore arancione */
-    border-color: var(--color-primary); /* Colore nero */
-    color: var(--color-primary) !important; /* Testo nero */
+    background-color: var(--color-accent);
+    border-color: var(--color-primary);
+    color: var(--color-primary) !important; /* Dark color text */
 }
 
-
-/* Contatti */
+/* Contact section */
 #contact {
     background: var(-color-white);
     padding: 3em 1em;
@@ -288,14 +290,14 @@ section {
 }
 
     /* Email */
-    /* Effetto hover "brackets" per l'email */
+    /* "Brackets" hover effect for email link */
     .contact-email a {
         position: relative;
         display: inline-block;
-        color: var(--color-primary); /* Nero */
+        color: var(--color-primary);
         text-decoration: none;
         font-size: 1.2rem;
-        font-weight: normal; /* Imposta il peso del font a normale */
+        font-weight: normal;
     }
 
     .contact-email a::before,
@@ -303,7 +305,7 @@ section {
         display: inline-block;
         opacity: 0;
         transition: transform 0.3s ease, opacity 0.3s ease;
-        color: var(--color-accent); /* Colore delle parentesi (arancione) */
+        color: var(--color-accent);
     }
 
     .contact-email a::before {
@@ -324,12 +326,10 @@ section {
         transform: translateX(0);
     }
 
-    /* Mantieni il colore dell'email nero anche durante l'hover */
     .contact-email a:hover {
-        color: var(--color-primary); /* Mantieni il testo nero */
+        color: var(--color-primary);
     }
     
-
 /* Icone Social */
 .social-icons a {
     margin: 0 15px;
@@ -338,15 +338,14 @@ section {
     transition: color 0.3s ease;
 }
 
-/* Ingrandimento icone social all'hover con specificità maggiore */
+/* Hover effect for social icons */
 .social-icons a i:hover {
     color: var(--color-accent);
-    transform: scale(1.2); /* Le icone crescono leggermente */
-    transition: transform 0.3s ease, color 0.3s ease; /* Transizione fluida */
+    transform: scale(1.2);
+    transition: transform 0.3s ease, color 0.3s ease;
 }
 
-
-    /* Bottone "Scroll to Top" */
+    /* "Scroll to Top" button */
     #return-to-top {
         background: var(--color-secondary);
         width: 50px;
@@ -374,7 +373,7 @@ section {
         transform: translateY(-5px); /* Sposta la freccia leggermente verso l'alto */
     }
 
-/* Footer */
+/* Footer section */
 footer {
     background-color: var(--color-primary);
     color: var(--color-white);
@@ -392,34 +391,34 @@ footer {
 
 /* Dark Mode */
 body.dark-mode {
-    --color-primary: #f0f0f0; /* Colore del testo */
-    --color-secondary: #333;  /* Sfondo delle sezioni */
-    --color-accent: #ff7f50;  /* Colore accento */
+    --color-primary: #f0f0f0; /* Text color */
+    --color-secondary: #333;  /* Section background */
+    --color-accent: #ff7f50;  /* Accent color */
     background-color: #121212;
 }
 
 .dark-mode .navbar {
-    background-color: var(--color-secondary-dark) !important; /* Sostituisci con un colore di sfondo più scuro per la modalità dark */
-    background-color: #333; /* Navbar più scura */
+    background-color: var(--color-secondary-dark) !important;
+    background-color: #333;
 }
 
 .dark-mode .about {
-    background-color: var(--color-secondary-dark) !important; /* Sostituisci con un colore di sfondo più scuro per la modalità dark */
-    color: var(--color-white); /* Testo bianco per migliorare la leggibilità */
+    background-color: var(--color-secondary-dark) !important;
+    color: var(--color-white);
 }
 
 .dark-mode .carousel-img img {
-    border: 1px solid #555; /* Bordo sottile per contrasto */
+    border: 1px solid #555;
 }
 
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-    background-color: var(--color-accent); /* Colore accento */
+    background-color: var(--color-accent);
     transition: transform 0.3s ease;
 }
 
 .carousel-control-prev-icon:hover,
 .carousel-control-next-icon:hover {
-    transform: translateX(-10px); /* Leggero spostamento per la freccia sinistra */
-    color: var(--color-primary); /* Colore freccia in hover */
+    transform: translateX(-10px);
+    color: var(--color-primary);
 }
