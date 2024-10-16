@@ -1,20 +1,23 @@
-// Smooth scrolling using scrollIntoView (native behavior) with offset for mobile
-// Smooth scrolling to the top of the section without centering it
+// Smooth scrolling to the top of the section 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
         const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-            const header = document.querySelector('.navbar');
-            const offset = header ? header.offsetHeight : 0; // Calcola l'altezza della navbar
-            const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - offset;
+        if (targetId && targetId !== "#") {
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                const header = document.querySelector('.navbar');
+                const offset = header ? header.offsetHeight : 0; // Calcola l'altezza della navbar
+                const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - offset;
 
-            // Scroll to the top of the section (no centering)
-            window.scrollTo({
-                top: elementPosition,
-                behavior: 'smooth'
-            });
+                // Scroll to the top of the section (no centering)
+                window.scrollTo({
+                    top: elementPosition,
+                    behavior: 'smooth'
+                });
+            } else {
+                console.warn(`Elemento non trovato per selettore: ${targetId}`);
+            }
         }
     });
 });
