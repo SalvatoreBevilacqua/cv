@@ -29,6 +29,40 @@ section {
     text-align: center;
 }
 
+/* Section-specific styles */
+#home {
+    background-color: var(--color-secondary);
+    border-bottom: 5px solid var(--color-accent);
+}
+
+#about {
+    background-color: var(--color-white);
+}
+
+#portfolio {
+    background-color: var(--color-secondary);
+}
+
+/* Titles */
+h1 {
+    font-size: 3rem; /* Larger size for the main title */
+    font-weight: 700; /* Higher weight to highlight the title */
+    margin-bottom: 20px; /* Bottom space for the title */
+}
+
+h2 {
+    font-size: 2.5rem; /* Increased size for subtitles */
+    font-weight: 600; /* Higher weight to highlight */
+    margin-bottom: 15px;
+}
+
+/* Paragraphs */
+p {
+    font-size: 1.2rem; /* Slightly increased for better readability */
+    line-height: 1.8; /* Added line spacing for better text appearance */
+    margin-bottom: 20px; /* Space between paragraphs to give text some breathing room */
+}
+
 /* Custom styles for the navbar */
 .navbar {
     background-color: var(--color-white);
@@ -84,21 +118,6 @@ section {
 
 .navbar-nav .nav-link:hover {
     color: var(--color-primary);
-}
-
-
-/* Section-specific styles */
-#home {
-    background-color: var(--color-secondary);
-    border-bottom: 5px solid var(--color-accent);
-}
-
-#about {
-    background-color: var(--color-white);
-}
-
-#portfolio {
-    background-color: var(--color-secondary);
 }
 
     /* Hamburger Menu styling */
@@ -173,6 +192,95 @@ section {
         left: 50%;
 }
 
+/* Dark mode toggle button styles */
+.btn-custom {
+    background-color: var(--color-secondary);
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-custom:hover {
+    background-color: var(--color-accent);
+    border-color: var(--color-primary);
+    color: var(--color-primary) !important; /* Dark color text */
+}
+
+/* Dark Mode */
+body.dark-mode {
+    --color-primary: #f0f0f0; /* Text color */
+    --color-secondary: #333;  /* Section background */
+    --color-accent: #ff7f50;  /* Accent color */
+    background-color: #121212;
+}
+
+.dark-mode .navbar {
+    background-color: var(--color-secondary-dark) !important;
+    background-color: #333;
+}
+
+.dark-mode .about {
+    background-color: var(--color-secondary-dark) !important;
+    color: var(--color-white);
+}
+
+.dark-mode .carousel-img img {
+    border: 1px solid #555;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: var(--color-accent);
+    transition: transform 0.3s ease;
+}
+
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover {
+    transform: translateX(-10px);
+    color: var(--color-primary);
+}
+
+/* "Brackets" hover effect for download CV link */
+.cv-download {
+    position: relative;
+    display: inline-block;
+    color: var(--color-primary);
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: normal;
+    padding: 10px 15px;
+}
+
+.cv-download::before,
+.cv-download::after {
+    display: inline-block;
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    color: var(--color-accent);
+}
+
+.cv-download::before {
+    content: '[';
+    margin-right: 7px;
+    transform: translateX(20px);
+}
+
+.cv-download::after {
+    content: ']';
+    margin-left: 7px;
+    transform: translateX(-20px);
+}
+
+.cv-download:hover::before,
+.cv-download:hover::after {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.cv-download:hover {
+    color: var(--color-primary);
+}
+
 /* Custom styles for the portfolio carousel */
 .carousel-img {
     position: relative;
@@ -213,7 +321,7 @@ section {
 
 .carousel-text {
     color: var(--color-primary);
-    background-color: var(--color-secondary);
+    background-color: var(--color-white);
     padding: 20px;
     border-radius: 5px; /* Rounded corners */
 }
@@ -225,8 +333,6 @@ section {
 }
 
 .carousel-text a {
-    background-color: var(--color-accent);
-    color: var(--color-primary);
     padding: 10px 20px;
     border-radius: 5px;
     text-decoration: none;
@@ -256,6 +362,50 @@ section {
     transform: translateX(10px) !important; /* Slide effect for right arrow */
 }
 
+/* Base style for the Visit buttons */
+.visit-btn {
+    position: relative;
+    display: inline-block;
+    color: var(--color-primary);
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: normal;
+    padding: 10px 15px; /* Adds padding to make it look like a button */
+}
+
+/* Add decorative brackets with hover effect */
+.visit-btn::before,
+.visit-btn::after {
+    display: inline-block;
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    color: var(--color-accent);
+}
+
+.visit-btn::before {
+    content: '[';
+    margin-right: 7px;
+    transform: translateX(20px);
+}
+
+.visit-btn::after {
+    content: ']';
+    margin-left: 7px;
+    transform: translateX(-20px);
+}
+
+/* Hover effect for visit buttons under carousel */
+.visit-btn:hover::before,
+.visit-btn:hover::after {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.visit-btn:hover {
+    color: var(--color-primary);
+}
+
+
 /* Responsive design for smaller devices */
 @media (max-width: 768px) {
     .carousel-img {
@@ -265,20 +415,6 @@ section {
     .carousel-overlay {
         background-color: rgba(0, 0, 0, 0.7); /* Darker overlay for mobile */
     }
-}
-
-/* Custom button styles */
-.btn-custom {
-    background-color: var(--color-secondary);
-    border-color: var(--color-primary);
-    color: var(--color-primary);
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-}
-
-.btn-custom:hover {
-    background-color: var(--color-accent);
-    border-color: var(--color-primary);
-    color: var(--color-primary) !important; /* Dark color text */
 }
 
 /* Contact section */
@@ -382,43 +518,9 @@ footer {
     font-size: 0.9rem;
 }
 
-/* Effetti responsive */
+/* Responsive design for smaller devices */
 @media (max-width: 768px) {
     .project-container {
         grid-template-columns: 1fr;
     }
-}
-
-/* Dark Mode */
-body.dark-mode {
-    --color-primary: #f0f0f0; /* Text color */
-    --color-secondary: #333;  /* Section background */
-    --color-accent: #ff7f50;  /* Accent color */
-    background-color: #121212;
-}
-
-.dark-mode .navbar {
-    background-color: var(--color-secondary-dark) !important;
-    background-color: #333;
-}
-
-.dark-mode .about {
-    background-color: var(--color-secondary-dark) !important;
-    color: var(--color-white);
-}
-
-.dark-mode .carousel-img img {
-    border: 1px solid #555;
-}
-
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-    background-color: var(--color-accent);
-    transition: transform 0.3s ease;
-}
-
-.carousel-control-prev-icon:hover,
-.carousel-control-next-icon:hover {
-    transform: translateX(-10px);
-    color: var(--color-primary);
 }
