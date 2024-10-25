@@ -216,7 +216,7 @@ body.dark-mode {
 
 .dark-mode .navbar {
     background-color: var(--color-secondary-dark) !important;
-    background-color: #333;
+    background-color: var(--color-secondary);
 }
 
 .dark-mode .about {
@@ -237,6 +237,15 @@ body.dark-mode {
 .carousel-control-prev-icon:hover,
 .carousel-control-next-icon:hover {
     transform: translateX(-10px);
+    color: var(--color-primary);
+}
+
+.dark-mode .carousel-text{
+    background-color: #333;
+}
+
+.dark-mode .carousel-text h3,
+.dark-mode .carousel-text p {
     color: var(--color-primary);
 }
 
