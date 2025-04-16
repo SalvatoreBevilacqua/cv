@@ -290,6 +290,85 @@ body.dark-mode {
     color: var(--color-primary);
 }
 
+/* Card styling for home section */
+#home .card {
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: var(--color-white);
+    border: none;
+    height: 100%;
+}
+
+    /* Image-only card styling */
+    #home .profile-card {
+        padding: 0;
+        overflow: hidden;
+        border-radius: 15px;
+    }
+
+    #home .profile-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 15px;
+        transition: transform 0.5s ease;
+    }
+
+    #home .profile-card:hover img {
+        transform: scale(1.05);
+    }
+
+#home .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+#home .card-body {
+    padding: 2rem;
+}
+
+#home .card-title {
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+}
+
+#home .card-text {
+    color: var(--color-primary);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Social icons in card */
+#home .social-icons a {
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+    font-size: 1.2rem;
+    color: var(--color-primary);
+    transition: color 0.3s ease, transform 0.3s ease;
+    text-decoration: none;
+}
+
+#home .social-icons a i {
+    margin-right: 10px;
+    font-size: 1.5rem;
+}
+
+#home .social-icons a:hover {
+    color: var(--color-accent);
+    transform: translateX(5px);
+}
+
+/* Dark mode adjustments for cards */
+body.dark-mode #home .card {
+    background-color: var(--color-secondary);
+}
+
+body.dark-mode #home .card-title,
+body.dark-mode #home .card-text {
+    color: var(--color-primary);
+}
+
 /* Custom styles for the portfolio carousel */
 .carousel-img {
     position: relative;
