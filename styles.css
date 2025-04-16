@@ -318,30 +318,20 @@ body.dark-mode {
         transform: scale(1.05);
     }
 
-/* Profile card text styling */
-#home .profile-card .card-img-overlay {
-    background: linear-gradient(to top, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0) 50%);
-    border-radius: 15px;
-}
+    /* Profile card text styling */
+    #home .profile-card .card-img-overlay {
+        background: linear-gradient(to top, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0) 50%);
+        border-radius: 15px;
+    }
 
-#home .profile-card .card-title,
-#home .profile-card .card-text {
-    color: var(--color-primary); /* Using your primary color variable instead of fixed black */
-    text-shadow: 0px 0px 3px rgba(255,255,255,0.8); /* Text shadow to improve readability */
-    font-weight: 600; /* Making text slightly bolder */
-}
+    #home .profile-card .card-title,
+    #home .profile-card .card-text {
+        color: var(--color-primary); /* Using your primary color variable instead of fixed black */
+        text-shadow: 0px 0px 3px rgba(255,255,255,0.8); /* Text shadow to improve readability */
+        font-weight: 600; /* Making text slightly bolder */
+    }
 
 /* Dark mode adjustments for cards */
-body.dark-mode #home .card {
-    background-color: var(--color-secondary);
-}
-
-body.dark-mode #home .card-title,
-body.dark-mode #home .card-text {
-    color: var(--color-primary);
-}
-
-/* Ensure profile card overlay adapts to dark mode */
 body.dark-mode #home .profile-card .card-img-overlay {
     background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 50%);
 }
@@ -372,6 +362,20 @@ body.dark-mode #home .profile-card .card-text {
     line-height: 1.6;
 }
 
+#home .social-icons a:hover {
+    color: var(--color-accent);
+    transform: translateX(5px);
+}
+
+body.dark-mode #home .card {
+    background-color: var(--color-white);
+}
+
+body.dark-mode #home .card-title,
+body.dark-mode #home .card-text {
+    color: var(--color-primary);
+}
+
 /* Social icons in card */
 #home .social-icons a {
     display: flex;
@@ -386,21 +390,6 @@ body.dark-mode #home .profile-card .card-text {
 #home .social-icons a i {
     margin-right: 10px;
     font-size: 1.5rem;
-}
-
-#home .social-icons a:hover {
-    color: var(--color-accent);
-    transform: translateX(5px);
-}
-
-/* Dark mode adjustments for cards */
-body.dark-mode #home .card {
-    background-color: var(--color-secondary);
-}
-
-body.dark-mode #home .card-title,
-body.dark-mode #home .card-text {
-    color: var(--color-primary);
 }
 
 /* Custom styles for the portfolio carousel */
