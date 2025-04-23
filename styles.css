@@ -6,6 +6,7 @@
     --color-secondary: #ddd; /* Light grey background */
     --color-accent: #f4a261; /* Warm accent color */
     --color-white: #fff; /* White */
+    --color-dark-text: #232323; /* For dark mode card text */
 }
 
 /* Reset default styles */
@@ -211,6 +212,7 @@ body.dark-mode {
     --color-primary: #f0f0f0; /* Text color */
     --color-secondary: #333;  /* Section background */
     --color-accent: #ff7f50;  /* Accent color */
+    --color-dark-text: #232323; /* Keep dark text for cards */
     background-color: #121212;
 }
 
@@ -373,7 +375,19 @@ body.dark-mode #home .card {
 
 body.dark-mode #home .card-title,
 body.dark-mode #home .card-text {
-    color: var(--color-primary);
+    color: var(--color-dark-text);
+}
+
+/* Fix for email and social links in dark mode */
+body.dark-mode #home .my-email,
+body.dark-mode #home .social-icons a {
+    color: var(--color-dark-text);
+}
+
+/* Also ensure hover states maintain visibility */
+body.dark-mode #home .my-email:hover,
+body.dark-mode #home .social-icons a:hover {
+    color: var(--color-accent);
 }
 
 /* Social icons in card */
