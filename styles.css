@@ -109,14 +109,14 @@ body {
 /* Dark mode adjustments for bracket effects */
 body.dark-mode .brackets-effect,
 body.dark-mode .navbar-nav .nav-link.brackets-effect {
-    color: var(--color-primary); /* Usa il colore primario in modalità scura (che diventa chiaro) */
+    color: var(--color-primary); /* Use the primary color in dark mode (which becomes light) */
 }
 
 body.dark-mode .brackets-effect:hover {
     color: var(--color-primary);
 }
 
-/* Eccezioni per i casi speciali in cui vogliamo mantenere il testo scuro anche in modalità scura */
+/* Exceptions for special cases where we want to keep the text dark even in dark mode */
 body.dark-mode #home .my-email.brackets-effect,
 body.dark-mode #home .social-icons a.brackets-effect,
 body.dark-mode .certification-card .btn-certificate.brackets-effect {
@@ -606,9 +606,9 @@ body.dark-mode .certification-card .cert-id {
     }
 
     #return-to-top:hover {
-        background-color: var(--color-accent); /* Colore arancione */
-        color: var(--color-primary); /* Colore nero per la freccia */
-        transform: translateY(-5px); /* Sposta la freccia leggermente verso l'alto */
+        background-color: var(--color-accent); /* Orange color */
+        color: var(--color-primary); /* Black color for the arrow */
+        transform: translateY(-5px); /* Slightly move the arrow upward */
     }
 
 /* Footer section */

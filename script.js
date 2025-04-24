@@ -36,16 +36,16 @@ function resetBurgerMenu() {
     const navbarCollapse = document.querySelector('.navbar-collapse');
     const burgerIcon = document.querySelector('.animated-icon2');
     
-    // Se il menu è espanso, chiudilo
+    // If the menu is expanded, close it
     if (navbarCollapse.classList.contains('show')) {
         new bootstrap.Collapse(navbarCollapse).toggle();
     }
     
-    // Assicurati che l'icona torni allo stato originale
+    // Icon returns to its original state
     burgerIcon.classList.remove('open');
 }
 
-// Chiudi il menu quando si clicca su un link
+// Close the menu when a link is clicked
 document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
     link.addEventListener('click', resetBurgerMenu);
 });
