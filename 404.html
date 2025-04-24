@@ -13,7 +13,7 @@
         <p>Looks like someone pressed the wrong button. 
             <br>
             How about heading back to the website?</p>
-        <a href="index.html" class="btn-404">Return to the Website</a>
+        <a href="index.html" class="btn-404 brackets-effect">Return to the Website</a>
     </div>       
 
     <style>
@@ -39,49 +39,6 @@
         p {
             font-size: 1.25rem;
             margin-bottom: 30px;
-        }
-    
-        /* Style for the return button on the 404 page */
-        .btn-404 {
-            position: relative;
-            display: inline-block;
-            color: var(--color-primary);
-            text-decoration: none;
-            font-size: 1.2rem;
-            font-weight: normal;
-            padding: 10px 15px; /* Padding to make it look like a button */
-            transition: color 0.3s ease; /* Smooth transition on text color */
-        }
-    
-        /* "Brackets" hover effect for return button */
-        .btn-404::before,
-        .btn-404::after {
-            display: inline-block;
-            opacity: 0;
-            transition: transform 0.3s ease, opacity 0.2s ease; /* Transition for bracket appearance */
-            color: var(--color-accent);
-        }
-    
-        .btn-404::before {
-            content: '[';
-            margin-right: 10px;
-            transform: translateX(20px); /* Brackets initially offset to the right */
-        }
-    
-        .btn-404::after {
-            content: ']';
-            margin-left: 10px;
-            transform: translateX(-20px); /* Brackets initially offset to the left */
-        }
-    
-        .btn-404:hover::before,
-        .btn-404:hover::after {
-            opacity: 1;
-            transform: translateX(0); /* Brackets move towards the text */
-        }
-    
-        .btn-404:hover {
-            color: var(--color-primary);
         }
     </style>       
 </body>

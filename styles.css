@@ -24,6 +24,118 @@ body {
     background-color: var(--color-white);
 }
 
+/* Unified Brackets Effect */
+.brackets-effect {
+    position: relative;
+    display: inline-block;
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* Before and After common styles */
+.brackets-effect::before,
+.brackets-effect::after {
+    display: inline-block;
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.2s ease;
+    color: var(--color-accent);
+}
+
+.brackets-effect::before {
+    content: '[';
+    margin-right: 10px;
+    transform: translateX(20px);
+}
+
+.brackets-effect::after {
+    content: ']';
+    margin-left: 10px;
+    transform: translateX(-20px);
+}
+
+.brackets-effect:hover::before,
+.brackets-effect:hover::after {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.brackets-effect:hover {
+    color: var(--color-primary);
+}
+
+/* Additional specific styles for each element type */
+/* Navbar links specific styles */
+.navbar-nav .nav-link.brackets-effect {
+    margin: 0 7px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+/* Email link specific styles */
+.contact-email a.brackets-effect {
+    font-size: 1.2rem;
+    font-weight: normal;
+}
+
+/* CV download specific styles */
+.cv-download.brackets-effect {
+    font-size: 1.2rem;
+    font-weight: normal;
+    padding: 10px 15px;
+}
+
+/* Certificate button specific styles */
+.btn-certificate.brackets-effect {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-top: 15px;
+    padding: 8px 15px;
+    background-color: transparent;
+    border: none;
+}
+
+/* Special download icon animation */
+.btn-certificate.brackets-effect .fa-download {
+    transition: transform 0.3s ease;
+}
+
+.btn-certificate.brackets-effect:hover .fa-download {
+    transform: translateY(3px);
+}
+
+/* Dark mode adjustments for bracket effects */
+body.dark-mode .brackets-effect,
+body.dark-mode .navbar-nav .nav-link.brackets-effect {
+    color: var(--color-primary); /* Usa il colore primario in modalità scura (che diventa chiaro) */
+}
+
+body.dark-mode .brackets-effect:hover {
+    color: var(--color-primary);
+}
+
+/* Eccezioni per i casi speciali in cui vogliamo mantenere il testo scuro anche in modalità scura */
+body.dark-mode #home .my-email.brackets-effect,
+body.dark-mode #home .social-icons a.brackets-effect,
+body.dark-mode .certification-card .btn-certificate.brackets-effect {
+    color: var(--color-dark-text);
+}
+
+body.dark-mode #home .my-email.brackets-effect:hover,
+body.dark-mode #home .social-icons a.brackets-effect:hover,
+body.dark-mode .certification-card .btn-certificate.brackets-effect:hover {
+    color: var(--color-accent);
+}
+
+/* 404 page button specific styles */
+.btn-404.brackets-effect {
+    font-size: 1.2rem;
+    font-weight: normal;
+    padding: 10px 15px;
+}
+
 /* Generic section styles */
 section {
     padding: 60px 0;
@@ -73,91 +185,6 @@ p {
 .navbar-brand {
     font-weight: bold;
     font-size: 1.5rem;
-    color: var(--color-primary);
-}
-
-/* "Brackets" hover effect for navbar links */
-.navbar-nav .nav-link {
-    position: relative;
-    display: inline-block;
-    margin: 0 7px;
-    outline: none;
-    color: var(--color-primary);
-    text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: 600;
-    font-size: 1rem;
-    transition: color 0.3s ease; /* Smooth transition on text color */
-}
-
-.navbar-nav .nav-link::before,
-.navbar-nav .nav-link::after {
-    display: inline-block;
-    opacity: 0;
-    transition: transform 0.3s, opacity 0.2s; /* Transition for bracket appearance */
-    color: var(--color-accent);
-}
-
-.navbar-nav .nav-link::before {
-    content: '[';
-    margin-right: 10px;
-    transform: translateX(20px); /* Brackets initially offset to the right */
-}
-
-.navbar-nav .nav-link::after {
-    content: ']';
-    margin-left: 10px;
-    transform: translateX(-20px); /* Brackets initially offset to the left */
-}
-
-.navbar-nav .nav-link:hover::before,
-.navbar-nav .nav-link:hover::after {
-    opacity: 1;
-    transform: translateX(0); /* Brackets move towards the text */
-}
-
-.navbar-nav .nav-link:hover {
-    color: var(--color-primary);
-}
-
-/* "Brackets" hover effect for email link */
-.contact-email a {
-    position: relative;
-    display: inline-block;
-    color: var(--color-primary);
-    text-decoration: none;
-    font-size: 1.2rem;
-    font-weight: normal;
-}
-
-.contact-email a::before,
-.contact-email a::after {
-    display: inline-block;
-    opacity: 0;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-    color: var(--color-accent);
-}
-
-.contact-email a::before {
-    content: '[';
-    margin-right: 7px;
-    transform: translateX(20px);
-}
-
-.contact-email a::after {
-    content: ']';
-    margin-left: 7px;
-    transform: translateX(-20px);
-}
-
-.contact-email a:hover::before,
-.contact-email a:hover::after {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-.contact-email a:hover {
     color: var(--color-primary);
 }
 
@@ -288,47 +315,6 @@ body.dark-mode {
 
 .dark-mode .carousel-text h3,
 .dark-mode .carousel-text p {
-    color: var(--color-primary);
-}
-
-/* "Brackets" hover effect for download CV link */
-.cv-download {
-    position: relative;
-    display: inline-block;
-    color: var(--color-primary);
-    text-decoration: none;
-    font-size: 1.2rem;
-    font-weight: normal;
-    padding: 10px 15px;
-}
-
-.cv-download::before,
-.cv-download::after {
-    display: inline-block;
-    opacity: 0;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-    color: var(--color-accent);
-}
-
-.cv-download::before {
-    content: '[';
-    margin-right: 7px;
-    transform: translateX(20px);
-}
-
-.cv-download::after {
-    content: ']';
-    margin-left: 7px;
-    transform: translateX(-20px);
-}
-
-.cv-download:hover::before,
-.cv-download:hover::after {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-.cv-download:hover {
     color: var(--color-primary);
 }
 
@@ -573,60 +559,6 @@ body.dark-mode .project-card-link:hover {
     color: var(--color-accent);
     font-weight: 600;
     margin-top: 1rem;
-}
-
-/* Download Certificate Button */
-.btn-certificate {
-    position: relative;
-    display: inline-block;
-    color: var(--color-primary);
-    text-decoration: none;
-    font-size: 1.1rem;
-    font-weight: 500;
-    margin-top: 15px;
-    padding: 8px 15px;
-    background-color: transparent;
-    border: none;
-    transition: color 0.3s ease;
-}
-
-/* "Brackets" hover effect for certificate button */
-.btn-certificate::before,
-.btn-certificate::after {
-    display: inline-block;
-    opacity: 0;
-    transition: transform 0.3s ease, opacity 0.2s ease;
-    color: var(--color-accent);
-}
-
-.btn-certificate::before {
-    content: '[';
-    margin-right: 10px;
-    transform: translateX(20px);
-}
-
-.btn-certificate::after {
-    content: ']';
-    margin-left: 10px;
-    transform: translateX(-20px);
-}
-
-.btn-certificate:hover::before,
-.btn-certificate:hover::after {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-.btn-certificate:hover {
-    color: var(--color-primary);
-}
-
-.btn-certificate .fa-download {
-    transition: transform 0.3s ease;
-}
-
-.btn-certificate:hover .fa-download {
-    transform: translateY(3px);
 }
 
 /* Dark mode adjustments */

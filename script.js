@@ -32,13 +32,22 @@ if (header) {
 }
 
 // Close burger menu after clicking on a link
+function resetBurgerMenu() {
+    const navbarCollapse = document.querySelector('.navbar-collapse');
+    const burgerIcon = document.querySelector('.animated-icon2');
+    
+    // Se il menu è espanso, chiudilo
+    if (navbarCollapse.classList.contains('show')) {
+        new bootstrap.Collapse(navbarCollapse).toggle();
+    }
+    
+    // Assicurati che l'icona torni allo stato originale
+    burgerIcon.classList.remove('open');
+}
+
+// Chiudi il menu quando si clicca su un link
 document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
-    link.addEventListener('click', function() {
-        const navbarCollapse = document.querySelector('.navbar-collapse');
-        if (navbarCollapse.classList.contains('show')) {
-            new bootstrap.Collapse(navbarCollapse).toggle(); // Close the burger menu
-        }
-    });
+    link.addEventListener('click', resetBurgerMenu);
 });
 
 // ===== Scroll to Top with immediate scroll ==== 
