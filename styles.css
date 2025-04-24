@@ -121,6 +121,46 @@ p {
     color: var(--color-primary);
 }
 
+/* "Brackets" hover effect for email link */
+.contact-email a {
+    position: relative;
+    display: inline-block;
+    color: var(--color-primary);
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: normal;
+}
+
+.contact-email a::before,
+.contact-email a::after {
+    display: inline-block;
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    color: var(--color-accent);
+}
+
+.contact-email a::before {
+    content: '[';
+    margin-right: 7px;
+    transform: translateX(20px);
+}
+
+.contact-email a::after {
+    content: ']';
+    margin-left: 7px;
+    transform: translateX(-20px);
+}
+
+.contact-email a:hover::before,
+.contact-email a:hover::after {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.contact-email a:hover {
+    color: var(--color-primary);
+}
+
     /* Hamburger Menu styling */
     .navbar-toggler {
         border: none; /* Removes any visible border */
@@ -475,68 +515,140 @@ body.dark-mode .project-card-link:hover {
     color: var(--color-accent);
 }
 
-/* Contact section */
-#contact {
-    background: var(-color-white);
-    padding: 3em 1em;
-    text-align: center;
-    padding-bottom: 10px;
+/* Education & Certifications Section Styles */
+#education {
+    background-color: var(--color-white); /* White background in light mode */
 }
 
-    /* Email */
-    /* "Brackets" hover effect for email link */
-    .contact-email a {
-        position: relative;
-        display: inline-block;
-        color: var(--color-primary);
-        text-decoration: none;
-        font-size: 1.2rem;
-        font-weight: normal;
-    }
+.certification-card {
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
 
-    .contact-email a::before,
-    .contact-email a::after {
-        display: inline-block;
-        opacity: 0;
-        transition: transform 0.3s ease, opacity 0.3s ease;
-        color: var(--color-accent);
-    }
+.certification-img-container {
+    height: 180px;
+    overflow: hidden;
+    background-color: var(--color-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
 
-    .contact-email a::before {
-        content: '[';
-        margin-right: 7px;
-        transform: translateX(20px);
-    }
+.certification-img {
+    max-width: 100%;
+    max-height: 140px;
+    object-fit: contain;
+    transition: transform 0.5s ease;
+}
 
-    .contact-email a::after {
-        content: ']';
-        margin-left: 7px;
-        transform: translateX(-20px);
-    }
+.certification-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
 
-    .contact-email a:hover::before,
-    .contact-email a:hover::after {
-        opacity: 1;
-        transform: translateX(0);
-    }
+.certification-card:hover .certification-img {
+    transform: scale(1.05);
+}
 
-    .contact-email a:hover {
-        color: var(--color-primary);
-    }
-    
-/* Icone Social */
-.social-icons a {
-    margin: 0 15px;
-    font-size: 2rem;
+.certification-card .card-body {
+    padding: 1.5rem;
+}
+
+.certification-card .card-title {
     color: var(--color-primary);
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.certification-card .card-text {
+    color: var(--color-primary);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.certification-card .cert-id {
+    font-size: 0.9rem;
+    color: var(--color-accent);
+    font-weight: 600;
+    margin-top: 1rem;
+}
+
+/* Download Certificate Button */
+.btn-certificate {
+    position: relative;
+    display: inline-block;
+    color: var(--color-primary);
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-top: 15px;
+    padding: 8px 15px;
+    background-color: transparent;
+    border: none;
     transition: color 0.3s ease;
 }
 
-/* Hover effect for social icons */
-.social-icons a i:hover {
+/* "Brackets" hover effect for certificate button */
+.btn-certificate::before,
+.btn-certificate::after {
+    display: inline-block;
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.2s ease;
     color: var(--color-accent);
-    transform: scale(1.2);
-    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.btn-certificate::before {
+    content: '[';
+    margin-right: 10px;
+    transform: translateX(20px);
+}
+
+.btn-certificate::after {
+    content: ']';
+    margin-left: 10px;
+    transform: translateX(-20px);
+}
+
+.btn-certificate:hover::before,
+.btn-certificate:hover::after {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.btn-certificate:hover {
+    color: var(--color-primary);
+}
+
+.btn-certificate .fa-download {
+    transition: transform 0.3s ease;
+}
+
+.btn-certificate:hover .fa-download {
+    transform: translateY(3px);
+}
+
+/* Dark mode adjustments */
+body.dark-mode #education {
+    background-color: #121212; /* Dark background in dark mode */
+}
+
+body.dark-mode .certification-card {
+    background-color: var(--color-white);
+}
+
+body.dark-mode .certification-card .card-title,
+body.dark-mode .certification-card .card-text {
+    color: var(--color-dark-text);
+}
+
+body.dark-mode .btn-certificate {
+    color: var(--color-dark-text);
+}
+
+body.dark-mode .certification-card .cert-id {
+    color: var(--color-accent);
 }
 
     /* "Scroll to Top" button */
@@ -583,7 +695,16 @@ footer {
     }
 }
 
-/* Responsive design for smaller devices */
+@media (max-width: 768px) {
+    .certification-img-container {
+        height: 180px;
+    }
+    
+    .certification-card .card-title {
+        font-size: 1.3rem;
+    }
+}
+
 @media (max-width: 768px) {
     .carousel-img {
         height: auto;
